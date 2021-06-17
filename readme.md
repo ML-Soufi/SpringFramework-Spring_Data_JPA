@@ -1,6 +1,9 @@
-Spring Framework : Spring Data JPA
+Spring Framework : Spring Data JPA.
+
 Une application Java pour le compte de CARLIB Assurances, un site d’assurance en ligne.
+
 Il manipule les différentes données :
-   ==> les catégories d’assurances auto.
-   ==> les produits associés à chaque catégorie.
-   ==> les commentaires de chaque produit.
+
+   - Les catégories d’assurances.
+   - Les produits associés à chaque catégorie.
+   - Les commentaires de chaque produit.
