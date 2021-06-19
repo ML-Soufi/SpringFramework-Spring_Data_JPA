@@ -61,7 +61,7 @@ public class CarlibApplication implements CommandLineRunner {
 
 		product = productService.addProduct(product);
 
-		System.out.println("the new product id is : "+product.getProductId());
+		//System.out.println("the new product id is : "+product.getProductId());
 
 
 	}
