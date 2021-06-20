@@ -54,12 +54,12 @@ public class CarlibApplication implements CommandLineRunner {
 //		newCategory.setNom("Promotion");
 //		newCategory = categoryService.addCategory(newCategory);
 
-		Product product = new Product();
-		product.setName("AssuranceTotal");
-		product.setDescription("cette assurance couvre tous...");
-		product.setCost(4900);
+		//Product product = new Product();
+		//product.setName("AssuranceTotal");
+		//product.setDescription("cette assurance couvre tous...");
+		//product.setCost(4900);
 
-		product = productService.addProduct(product);
+		//product = productService.addProduct(product);
 
 		//System.out.println("the new product id is : "+product.getProductId());
 

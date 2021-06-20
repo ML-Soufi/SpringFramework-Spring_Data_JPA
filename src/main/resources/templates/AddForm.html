@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion Assurance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<h1 class="mt-2" style="text-align: center;">Carlib - Assurance </h1>
+<div class="container">
+    <br>
+    <h5>Ajouter une assurance :</h5>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <form method="POST"  th:action="@{/saveAssurance}" th:object="${product}">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="name"><b>Nom d'assurance :</b></label>
+                     </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="description"><b>Description :</b></label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="description" name="description">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="cost"><b>Cout :</b></label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="cost" name="cost">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-9">
+                        <button style="width: 100%" type="submit" class="btn btn-success">Enregister</button>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <a href="/">La liste des assurances.</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
