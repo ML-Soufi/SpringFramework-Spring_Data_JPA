@@ -5,10 +5,9 @@ import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 public class ProductController {
@@ -31,6 +30,31 @@ public class ProductController {
     @RequestMapping(value = "/saveAssurance", method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute("product") Product product){
         productService.addProduct(product);
+        return "redirect:/";
+    }
+
+    @GetMapping("/editAssurance/{id}")
+    public String editForm(Model model, @PathVariable Integer id){
+        Optional<Product> prc = productService.getProductById(id);
+        Product product = prc.get();
+        model.addAttribute("product", product);
+        return "editForm";
+    }
+
+    @PostMapping("/updateAssurance/{id}")
+    public String updateProduct(@ModelAttribute("product") Product product, @PathVariable Integer id){
+        Optional<Product> prc = productService.getProductById(id);
+        Product NEWproduct = prc.get();
+        NEWproduct.setName(product.getName());
+        NEWproduct.setDescription(product.getDescription());
+        NEWproduct.setCost(product.getCost());
+        productService.addProduct(NEWproduct);
+        return "redirect:/";
+    }
+
+    @GetMapping("/deleteAssurance/{id}")
+    public String updateProduct( @PathVariable Integer id){
+        productService.deleteProduct(id);
         return "redirect:/";
     }
 }

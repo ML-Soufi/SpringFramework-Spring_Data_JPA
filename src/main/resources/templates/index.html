@@ -28,13 +28,11 @@
                 <th  th:text="${product.name}"></th>
                 <td th:text="${product.description}"></td>
                 <td th:text="${product.cost}"></td>
-                <td>
+                <td>                    &nbsp;
                     &nbsp;
-                    <a href="#"><i class="fa fa-comment" aria-hidden="true" style="color: blue;"></i></a>
+                    <a th:href="@{/editAssurance/{id}(id = ${product.productId})}"><i class="fa fa-edit" aria-hidden="true" style="color: orangered;"></i></a>
                     &nbsp;
-                    <a href="#"><i class="fa fa-edit" aria-hidden="true" style="color: orangered;"></i></a>
-                    &nbsp;
-                    <a href="#"><i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></a>
+                    <a th:href="@{/deleteAssurance/{id}(id = ${product.productId})}"><i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></a>
                 </td>
             </tr>
             </tbody>
